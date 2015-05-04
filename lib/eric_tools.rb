@@ -1,8 +1,19 @@
-require 'rubygems'
 require 'nokogiri'
 require "eric_tools/version"
 
-require File.dirname(__FILE__) + '/restclient/business_exception.rb'
+require File.dirname(__FILE__) + '/eric_tools/array.rb'
+require File.dirname(__FILE__) + '/eric_tools/business_exception.rb'
+require File.dirname(__FILE__) + '/eric_tools/date.rb'
+require File.dirname(__FILE__) + '/eric_tools/date_time.rb'
+require File.dirname(__FILE__) + '/eric_tools/hash.rb'
+require File.dirname(__FILE__) + '/eric_tools/nil_class.rb'
+require File.dirname(__FILE__) + '/eric_tools/string.rb'
+require File.dirname(__FILE__) + '/eric_tools/symbol.rb'
+require File.dirname(__FILE__) + '/eric_tools/time.rb'
+require File.dirname(__FILE__) + '/eric_tools/version.rb'
+
+
+
 
 module EricTools
   def self.uuid
@@ -20,4 +31,15 @@ module EricTools
         rand(36 ** length).to_s(36)
     end
   end
+
+  module RegularConstants
+    EmailRegular = /\A[\w+\-.]+@[a-z\d\-]+(?:\.[a-z\d\-]+)*\.[a-z]+\z/i
+    UserNameRegular = /\A[a-zA-Z_\d\s-]*\z/
+    BirthdayRegular = /\A[0-9]{4}-[0-9]{2}-[0-9]{2}\z/
+    MobilePhone = /\A[0-9]{11}\z/
+    QuHao = /\A[0-9]{3,4}\z/
+    FixedPhone=/\A[0-9]{7,8}\z/
+  end
+
+
 end
