@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = EricTools::VERSION
   spec.authors       = ["刘晓琦"]
   spec.email         = ["ericliu@ikidstv.com"]
-  spec.summary       = %q{一些简单的类方法}
-  spec.description   = %q{详细描述后续再加}
+  spec.summary       = %q{在Rails框架基础上，对一些类增加一些工具方法。同时封装了一些平时比较常用的函数，如uuid, 随字数，根据ip获得城市名称等}
+  spec.description   = %q{1.在Rails框架基础上，对一些类增加一些工具方法。 2.增加了一些工具类，如uuid,生成随机字符串，根据Ip获取城市名称等  3.一些有用的正则表达式}
   spec.homepage      = ""
   spec.license       = "MIT"
 
@@ -18,9 +18,12 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
 
-  spec.add_development_dependency 'rubygems', '~> 0'
-  spec.add_development_dependency "bundler", "~> 1.6"
-  spec.add_development_dependency "rake", "~> 0"
-  spec.add_development_dependency "nokogiri", '~> 0'
+
+
+
+  spec.add_dependency "nokogiri", '~> 1.6'
+  spec.add_dependency 'rest-client', '~> 1.8'
+
+
 
 end
