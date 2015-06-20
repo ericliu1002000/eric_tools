@@ -31,7 +31,6 @@ module EricTools
   # EricTools.uuid
   def self.uuid
     UUIDTools::UUID.timestamp_create.to_s
-
   end
 
   #type＝1表示只包含数字，type＝2表示只包含字母，type＝3表示都包含
@@ -67,12 +66,14 @@ module EricTools
   end
 
   module RegularConstants
-    EmailRegular = /\A[\w+\-.]+@[a-z\d\-]+(?:\.[a-z\d\-]+)*\.[a-z]+\z/i
-    UserNameRegular = /\A[a-zA-Z_\d\s-]*\z/
-    BirthdayRegular = /\A[0-9]{4}-[0-9]{2}-[0-9]{2}\z/
-    MobilePhone = /\A[0-9]{11}\z/
-    QuHao = /\A[0-9]{3,4}\z/
-    FixedPhone=/\A[0-9]{7,8}\z/
+    EmailRegular = /\A[\w+\-.]+@[a-z\d\-]+(?:\.[a-z\d\-]+)*\.[a-z]+\z/i  #邮件
+    UserNameRegular = /\A[a-zA-Z_\d\s-]*\z/ # 不限长度纯字符用户名
+    BirthdayRegular = /\A[0-9]{4}-[0-9]{2}-[0-9]{2}\z/  #非严格日期校验
+    MobilePhone = /\A[0-9]{11}\z/   # 手机号  11位数字校验
+    QuHao = /\A[0-9]{3,4}\z/     #区号 3-4位数字校验
+    FixedPhone=/\A[0-9]{7,8}\z/    #固话  7-8 位数字校验
+    VinNo=/\A[0-9a-zA-Z]{17}\z/  #车架号 17位，数字或字母组合
+    EngineNo=/\A[0-9a-zA-Z]{6,10}\z/
   end
 
 
