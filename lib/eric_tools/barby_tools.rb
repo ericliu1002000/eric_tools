@@ -8,11 +8,12 @@ module BarbyTools
   #   content, 要转换的字符串
   #   file_path, 要保存的文件路径(png)
   def self.create_barcode options
-    barcode = Barby::Code128B.new(options[:content])
-    blob = Barby::PngOutputter.new(barcode).to_png(:height => 20, :margin => 5)
+    barcode = Barby::Code128.new(options[:content])
+    blob = Barby::PngOutputter.new(barcode)
+    blob.xdim = 2 # 设置宽度只能通过配置xdim参数, 且只可为正整数
     unless File.exist? options[:file_path]
       File.open(options[:file_path], 'wb'){|f|
-        f.write blob.force_encoding("ISO-8859-1")   #在rails环境中,如果不encode,会报错
+        f.write blob.to_png(:height => 65, :margin => 5).force_encoding("ISO-8859-1")   #在rails环境中,如果不encode,会报错
       }
     end
   end
