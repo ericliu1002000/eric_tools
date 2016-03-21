@@ -2,6 +2,9 @@ require 'nokogiri'
 require 'rest_client'
 require "eric_tools/version"
 require 'json'
+require 'barby/barcode/code_128'
+require 'barby/outputter/png_outputter'
+require 'barby/barcode/qr_code'
 
 require File.dirname(__FILE__) + '/eric_tools/array.rb'
 require File.dirname(__FILE__) + '/eric_tools/business_exception.rb'
@@ -13,6 +16,7 @@ require File.dirname(__FILE__) + '/eric_tools/string.rb'
 require File.dirname(__FILE__) + '/eric_tools/symbol.rb'
 require File.dirname(__FILE__) + '/eric_tools/time.rb'
 require File.dirname(__FILE__) + '/eric_tools/version.rb'
+require File.dirname(__FILE__) + '/eric_tools/barby_tools.rb'
 
 module EricTools
 
